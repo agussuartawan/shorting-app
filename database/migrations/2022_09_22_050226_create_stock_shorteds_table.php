@@ -17,7 +17,7 @@ class CreateStockShortedsTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->integer('stock');
+            $table->integer('stock')->default(0);
             $table->timestamps();
         });
     }
