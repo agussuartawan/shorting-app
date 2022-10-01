@@ -4,8 +4,10 @@ namespace App\Imports;
 
 use App\Models\StockAccurate;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
+use Maatwebsite\Excel\Concerns\WithValidation;
 
-class ImportStockAccurate implements ToModel
+class ImportStockAccurate implements ToModel, WithValidation, SkipsEmptyRows
 {
     /**
     * @param array $row

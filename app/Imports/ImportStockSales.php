@@ -5,8 +5,9 @@ namespace App\Imports;
 use App\Models\StockSale;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithValidation;
+use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
 
-class ImportStockSales implements ToModel
+class ImportStockSales implements ToModel, WithValidation, SkipsEmptyRows
 {
     /**
     * @param array $row
