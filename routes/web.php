@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ShortingController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,9 @@ Route::post('import-stock-accurate', [ShortingController::class, 'storeStockaccu
 Route::get('shorting', [ShortingController::class, 'shorting'])->name('shorting');
 Route::get('export/pdf', [ShortingController::class, 'exportPdf'])->name('export.pdf');
 Route::get('export/excel', [ShortingController::class, 'exportExcel'])->name('export.excel');
+
+Route::get('truncate', function () {
+    Artisan::call('migrate:fresh --seed');
+
+    return redirect()->route('home');
+})->name('truncate');

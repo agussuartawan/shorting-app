@@ -89,6 +89,12 @@
                                 </div>
                             </li>
                         </ul>
+                        <div class="d-flex justify-content-center">
+                            <a href="{{ route('truncate') }}" class="btn btn-danger"
+                                onclick="return confirm('Are you sure?')">
+                                <i class="fa-solid fa-fw fa-triangle-exclamation"></i> Delete Data
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
