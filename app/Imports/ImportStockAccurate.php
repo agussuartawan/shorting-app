@@ -20,4 +20,13 @@ class ImportStockAccurate implements ToModel
             'stock' => $row[2],
         ]);
     }
+
+    public function rules(): array
+    {
+        return [
+            '0' => 'required',
+            '1' => 'required',
+            '2' => 'required',
+        ];
+    }
 }
