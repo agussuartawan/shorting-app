@@ -32,7 +32,7 @@
                                 </div>
                                 <a href="{{ route('import.stock.sales') }}" class="btn btn-secondary btn-sm">
                                     <i class="fa-solid fa-fw fa-cloud-arrow-up"></i>
-                                    Import Stock Sales</a>
+                                    Import</a>
                             </li>
                             <li
                                 class="d-flex justify-content-between list-group-item{{ $accurate_ready ? ' list-group-item-success' : '' }}">
@@ -45,9 +45,9 @@
                                     Import Stock Accurate
                                 </div>
                                 @if ($sale_ready)
-                                    <a href="{{ route('import.stock.accurate') }}" class="btn btn-sm btn-warning">
+                                    <a href="{{ route('import.stock.accurate') }}" class="btn btn-sm btn-secondary">
                                         <i class="fa-solid fa-fw fa-cloud-arrow-up"></i>
-                                        Import Stock Accurate</a>
+                                        Import</a>
                                 @endif
                             </li>
                             <li
@@ -58,11 +58,11 @@
                                     @else
                                         <i class="fa-solid fa-fw fa-xmark"></i>
                                     @endif
-                                    Klik Shorting
+                                    Klik Sorting
                                 </div>
                                 @if ($sale_ready && $accurate_ready)
                                     <a href="{{ route('shorting') }}" class="btn btn-sm btn-secondary"><i
-                                            class="fa-solid fa-fw fa-arrow-down-wide-short"></i> Shorting</a>
+                                            class="fa-solid fa-fw fa-arrow-down-wide-short"></i> Sorting</a>
                                 @endif
                             </li>
                             <li
@@ -80,11 +80,11 @@
                                         <a href="{{ route('export.pdf') }}" class="btn btn-sm btn-danger mx-1"
                                             target="_blank">
                                             <i class="fa-solid fa-fw fa-file-pdf"></i>
-                                            Download PDF</a>
+                                            PDF</a>
                                         <a href="{{ route('export.excel') }}" class="btn btn-sm btn-success"
                                             target="_blank">
                                             <i class="fa-solid fa-fw fa-file-excel"></i>
-                                            Download Excel</a>
+                                            Excel</a>
                                     @endif
                                 </div>
                             </li>
