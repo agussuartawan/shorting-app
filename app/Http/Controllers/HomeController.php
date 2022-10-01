@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StockAccurate;
 use App\Models\StockSale;
+use App\Models\StockShorted;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,6 +32,10 @@ class HomeController extends Controller
         if ($sales == $accurate) {
             $complete = true;
         }
-        return view('home', compact('complete'));
+
+        $sale_ready = StockSale::exists();
+        $accurate_ready = StockAccurate::exists();
+        $shorted_ready = StockShorted::exists();
+        return view('home', compact('complete', 'sale_ready', 'accurate_ready', 'shorted_ready'));
     }
 }

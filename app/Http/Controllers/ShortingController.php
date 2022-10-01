@@ -24,7 +24,7 @@ class ShortingController extends Controller
         StockSale::truncate();
         Excel::import(new ImportStockSales, request()->file('stock_sales'));
 
-        return redirect()->route('home')->with('success', 'Import stock sales berhasil');
+        return redirect()->route('home');
     }
 
     public function importStockAccurate()
@@ -37,7 +37,7 @@ class ShortingController extends Controller
         StockAccurate::truncate();
         Excel::import(new ImportStockAccurate, request()->file('stock_accurate'));
 
-        return redirect()->route('home')->with('success', 'Import stock accurate berhasil');
+        return redirect()->route('home');
     }
 
     public function shorting()
@@ -54,7 +54,7 @@ class ShortingController extends Controller
             ]);
         }
         
-        return redirect()->route('home')->with('success', 'Shorting berhasil!');
+        return redirect()->route('home');
     }
 
     public function exportPdf()
